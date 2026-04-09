@@ -1,53 +1,53 @@
-# Proyecto: Práctica Web - Rick and Morty App
+# Project: Web Practice - Rick and Morty App
 
-Este proyecto es una aplicación web interactiva desarrollada con **JavaScript Vanilla**, HTML5 y CSS3. La aplicación permite a los usuarios iniciar sesión, explorar personajes de la serie "Rick and Morty" a través de una API pública, realizar búsquedas y ver detalles específicos de cada personaje en una interfaz totalmente responsiva.
+This project is an interactive web application developed with **Vanilla JavaScript**, HTML5, and CSS3. The application allows users to log in, explore characters from the "Rick and Morty" series through a public API, perform searches, and view specific details for each character in a fully responsive interface.
 
-## Características
+## Features
 
-- **Login de Usuario:** Validación simple en el cliente.
-- **Dashboard Responsivo:** 
-  - 5 columnas en pantallas grandes.
-  - 3 columnas en pantallas medianas.
-  - 1 columna en dispositivos móviles.
-- **Integración con API:** Consumo de datos e imágenes desde [The Rick and Morty API](https://rickandmortyapi.com/).
-- **Búsqueda Dinámica:** Filtra personajes por nombre mediante la barra de búsqueda.
-- **Vista de Detalles:** Página dedicada para ver información extendida del personaje seleccionado.
-- **Navegación Fluida:** Botones de retroceso y redirección lógica.
+- **User Login:** Simple client-side validation.
+- **Responsive Dashboard:** 
+  - 5 columns on large screens.
+  - 3 columns on medium screens.
+  - 1 column on mobile devices.
+- **API Integration:** Consumes data and images from [The Rick and Morty API](https://rickandmortyapi.com/).
+- **Dynamic Search:** Filters characters by name via the search bar.
+- **Detail View:** Dedicated page to view extended information for the selected character.
+- **Fluid Navigation:** Back buttons and logical redirection.
 
-## Tecnologías Utilizadas
+## Technologies Used
 
-- **HTML5:** Estructura semántica.
-- **CSS3:** Diseño responsivo con CSS Grid y Flexbox.
-- **JavaScript (ES6+):** Lógica de negocio, manejo del DOM y peticiones asíncronas (`fetch`/`async-await`).
-- **Git:** Control de versiones.
+- **HTML5:** Semantic structure.
+- **CSS3:** Responsive design with CSS Grid and Flexbox.
+- **JavaScript (ES6+):** Business logic, DOM manipulation, and asynchronous requests (`fetch`/`async-await`).
+- **Git:** Version control.
 
-## Instalación y Uso
+## Installation and Usage
 
-1. **Clonar el repositorio:**
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/tu-usuario/progra-web-practicas.git
+   git clone https://github.com/your-username/web-practice-app.git
    ```
-2. **Navegar al directorio:**
+2. **Navigate to the directory:**
    ```bash
-   cd "Progra web practicas"
+   cd "web-practice-app"
    ```
-3. **Ejecutar la aplicación:**
-   Simplemente abre el archivo `index.html` en tu navegador preferido o usa una extensión como "Live Server" en VS Code.
+3. **Run the application:**
+   Simply open the `index.html` file in your preferred browser or use an extension like "Live Server" in VS Code.
 
-## Credenciales de Acceso
+## Access Credentials
 
-- **Usuario:** `admin`
-- **Contraseña:** `password`
+- **Username:** `admin`
+- **Password:** `password`
 
-## Estructura del Proyecto
+## Project Structure
 
 ```text
-├── index.html       # Página de Login
-├── login.js         # Lógica de validación de acceso
-├── dashboard.html   # Galería de personajes
-├── dashboard.js     # Consumo de API y renderizado de cartas
-├── detail.html      # Detalle de personaje
-├── detail.js        # Lógica de carga de detalles individuales
-├── style.css        # Estilos globales y responsividad
-└── README.md        # Documentación del proyecto
+├── index.html       # Login Page
+├── login.js         # Access validation logic
+├── dashboard.html   # Character gallery
+├── dashboard.js     # API consumption and card rendering
+├── detail.html      # Character detail view
+├── detail.js        # Individual detail loading logic
+├── style.css        # Global styles and responsiveness
+└── README.md        # Project documentation
 ```

@@ -1,4 +1,4 @@
-// Check if logged in
+// Check if user is logged in
 if (localStorage.getItem('isLoggedIn') !== 'true') {
     window.location.href = 'index.html';
 }
@@ -7,7 +7,10 @@ const characterGrid = document.getElementById('characterGrid');
 const searchInput = document.getElementById('searchInput');
 const searchBtn = document.getElementById('searchBtn');
 
-// Function to fetch characters
+/**
+ * Fetch characters from the Rick and Morty API
+ * @param {string} name - Optional name filter for characters
+ */
 async function fetchCharacters(name = '') {
     const url = name ? `https://rickandmortyapi.com/api/character/?name=${name}` : 'https://rickandmortyapi.com/api/character';
     
@@ -26,7 +29,10 @@ async function fetchCharacters(name = '') {
     }
 }
 
-// Function to render characters to the grid
+/**
+ * Render character list to the grid in the DOM
+ * @param {Array} characters - List of character objects
+ */
 function renderCharacters(characters) {
     characterGrid.innerHTML = '';
     
@@ -40,6 +46,7 @@ function renderCharacters(characters) {
             </div>
         `;
         
+        // Add click event to navigate to detail page
         card.addEventListener('click', () => {
             window.location.href = `detail.html?id=${char.id}`;
         });
@@ -48,16 +55,16 @@ function renderCharacters(characters) {
     });
 }
 
-// Initial fetch
+// Initial data fetch
 fetchCharacters();
 
-// Search functionality
+// Search functionality on button click
 searchBtn.addEventListener('click', () => {
     const searchTerm = searchInput.value.trim();
     fetchCharacters(searchTerm);
 });
 
-// Search on Enter key
+// Search functionality on Enter key press
 searchInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         const searchTerm = searchInput.value.trim();

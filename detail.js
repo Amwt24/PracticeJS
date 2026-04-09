@@ -1,17 +1,21 @@
-// Check if logged in
+// Redirect to login if not authenticated
 if (localStorage.getItem('isLoggedIn') !== 'true') {
     window.location.href = 'index.html';
 }
 
 const detailContent = document.getElementById('detailContent');
 
-// Extract the character ID from the URL
+// Retrieve character ID from query parameters
 const params = new URLSearchParams(window.location.search);
 const characterId = params.get('id');
 
+/**
+ * Fetch character details by ID from the API
+ * @param {string} id - The character's unique ID
+ */
 async function fetchCharacterDetails(id) {
     if (!id) {
-        detailContent.innerHTML = '<p>Character not found. <a href="dashboard.html">Go back</a></p>';
+        detailContent.innerHTML = '<p>Character not found. <a href="dashboard.html">Return to Dashboard</a></p>';
         return;
     }
 
@@ -22,14 +26,18 @@ async function fetchCharacterDetails(id) {
         if (data && data.name) {
             renderCharacterDetail(data);
         } else {
-            detailContent.innerHTML = '<p>Error loading character details.</p>';
+            detailContent.innerHTML = '<p>Error loading character details. Character might not exist.</p>';
         }
     } catch (error) {
-        console.error('Error fetching character details:', error);
-        detailContent.innerHTML = '<p>Failed to connect to API.</p>';
+        console.error('Network or API Error:', error);
+        detailContent.innerHTML = '<p>Failed to connect to the character service.</p>';
     }
 }
 
+/**
+ * Build the character detail view in the DOM
+ * @param {Object} character - Data object for a single character
+ */
 function renderCharacterDetail(character) {
     detailContent.innerHTML = `
         <div class="detail-container">
@@ -48,5 +56,5 @@ function renderCharacterDetail(character) {
     `;
 }
 
-// Initial fetch based on the ID in the URL
+// Initial fetch based on character ID
 fetchCharacterDetails(characterId);
